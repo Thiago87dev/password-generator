@@ -60,12 +60,18 @@ main {
 .include-option-group {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    gap: 15px;
+    margin-bottom: 15px;
 }
 
 .include-option{
     display: flex;
     gap: 10px;
+}
+
+input[type=checkbox],
+label {
+    cursor: pointer;
 }
 
 .strength {

@@ -14,10 +14,10 @@ function App() {
   const [password, setPassword] = useState("");
   const [strength, setStrength] = useState("");
   const [qntSelected, setQntSelected] = useState(0);
-  const [colorLevel1, setcolorLevel1] = useState('')
-  const [colorLevel2, setcolorLevel2] = useState('')
-  const [colorLevel3, setcolorLevel3] = useState('')
-  const [colorLevel4, setcolorLevel4] = useState('')
+  const [colorLevel1, setcolorLevel1] = useState("");
+  const [colorLevel2, setcolorLevel2] = useState("");
+  const [colorLevel3, setcolorLevel3] = useState("");
+  const [colorLevel4, setcolorLevel4] = useState("");
 
   const handleLengthChange = (e: ChangeEvent<HTMLInputElement>) => {
     setLength(Number(e.target.value));
@@ -48,7 +48,7 @@ function App() {
     if (isCheckedSymbol) selectedCount++;
 
     setQntSelected(selectedCount);
-    setLength2(length)
+    setLength2(length);
 
     setPassword(
       passwordGenerator(
@@ -61,53 +61,53 @@ function App() {
     );
   };
 
-  useEffect(()=>{
-    if(strength === '') {
-      setcolorLevel1('transparent')
-      setcolorLevel2('transparent')
-      setcolorLevel3('transparent')
-      setcolorLevel4('transparent')
+  useEffect(() => {
+    if (strength === "") {
+      setcolorLevel1("transparent");
+      setcolorLevel2("transparent");
+      setcolorLevel3("transparent");
+      setcolorLevel4("transparent");
     }
-    if(strength === 'Too Weak') {
-      setcolorLevel1('red')
-      setcolorLevel2('transparent')
-      setcolorLevel3('transparent')
-      setcolorLevel4('transparent')
+    if (strength === "Too Weak") {
+      setcolorLevel1("red");
+      setcolorLevel2("transparent");
+      setcolorLevel3("transparent");
+      setcolorLevel4("transparent");
     }
-    if(strength === 'Weak') {
-      setcolorLevel1('red')
-      setcolorLevel2('red')
-      setcolorLevel3('transparent')
-      setcolorLevel4('transparent')
+    if (strength === "Weak") {
+      setcolorLevel1("red");
+      setcolorLevel2("red");
+      setcolorLevel3("transparent");
+      setcolorLevel4("transparent");
     }
-    if(strength === 'Medium') {
-      setcolorLevel1('yellow')
-      setcolorLevel2('yellow')
-      setcolorLevel3('yellow')
-      setcolorLevel4('transparent')
+    if (strength === "Medium") {
+      setcolorLevel1("yellow");
+      setcolorLevel2("yellow");
+      setcolorLevel3("yellow");
+      setcolorLevel4("transparent");
     }
-    if(strength === 'Strong') {
-      setcolorLevel1('green')
-      setcolorLevel2('green')
-      setcolorLevel3('green')
-      setcolorLevel4('green')
+    if (strength === "Strong") {
+      setcolorLevel1("green");
+      setcolorLevel2("green");
+      setcolorLevel3("green");
+      setcolorLevel4("green");
     }
-  },[strength])
+  }, [strength]);
 
   useEffect(() => {
     setStrength(strengthFunc(length2, qntSelected));
   }, [length2, qntSelected]);
 
-  const copyToClipboard = ():void => {
-    navigator.clipboard.writeText(password)
-    .then(() => {
-      alert("Password copied to clipboard!")
-    })
-    .catch((error) => {
-      console.log("Error copying password: ", error);
-      
-    })
-  }
+  const copyToClipboard = (): void => {
+    navigator.clipboard
+      .writeText(password)
+      .then(() => {
+        alert("Password copied to clipboard!");
+      })
+      .catch((error) => {
+        console.log("Error copying password: ", error);
+      });
+  };
 
   return (
     <>
@@ -115,7 +115,9 @@ function App() {
         <h1 className="title">Password Generator</h1>
         <div className="result">
           <p className="result-password">{password}</p>
-          <div title="copy" onClick={copyToClipboard} className="btn-copy"><FaRegCopy /></div>
+          <div title="copy" onClick={copyToClipboard} className="btn-copy">
+            <FaRegCopy />
+          </div>
         </div>
         <div className="settings">
           <div className="length-group">
@@ -136,35 +138,39 @@ function App() {
           <div className="include-option-group">
             <div className="include-option">
               <input
+                id="upper"
                 checked={isCheckedUpper}
                 onChange={handleCheckboxChangeUpper}
                 type="checkbox"
               />
-              <p>Include Uppercase Letters</p>
+              <label htmlFor="upper">Include Uppercase Letters</label>
             </div>
             <div className="include-option">
               <input
+                id="lower"
                 checked={isCheckedLower}
                 onChange={handleCheckboxChangeLower}
                 type="checkbox"
               />
-              <p>Include Lowercase Letters</p>
+              <label htmlFor="lower">Include Lowercase Letters</label>
             </div>
             <div className="include-option">
               <input
+                id="numb"
                 checked={isCheckedNumber}
                 onChange={handleCheckboxChangeNumber}
                 type="checkbox"
               />
-              <p>Include Numbers</p>
+              <label htmlFor="numb">Include Numbers</label>
             </div>
             <div className="include-option">
               <input
+                id="symb"
                 checked={isCheckedSymbol}
                 onChange={handleCheckboxChangeSymbol}
                 type="checkbox"
               />
-              <p>Include Symbols</p>
+              <label htmlFor="symb">Include Symbols</label>
             </div>
           </div>
           <div className="strength">

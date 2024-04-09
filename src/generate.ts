@@ -31,11 +31,11 @@ export default function passwordGenerator(
 
   senhaArray.slice(0, qnt);
 
-  if (qnt === 0) return "Quantidade não pode ser igual a zero";
+  if (qnt === 0) return "Size cannot be zero";
   return (
     senhaArray
       .slice(0, qnt)
       .sort(() => 0.5 - Math.random())
-      .join("") || "Nada selecionado"
+      .join("") || "Nothing selected"
   );
 }
