@@ -1,0 +1,138 @@
+main {
+    width: 25rem;
+    height: 120%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title{
+    color: darkgrey;
+    font-size: x-large;
+}
+
+.result {
+    background-color: #383838;
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.result-password {
+    font-size: 1.5rem;
+    width: 90%;
+    word-wrap: break-word;
+}
+
+.btn-copy {
+    cursor: pointer;
+    color: #7fff00;
+}
+
+.btn-copy:active{
+    scale: 0.9;
+}
+
+.settings {
+    background-color: #383838;
+    width: 100%;
+    padding: 20px;
+}
+
+.length-group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.number-length {
+    color:#7fff00 ;
+}
+
+.input-range {
+    width: 100%;
+    margin: 15px 0;
+    cursor: pointer;
+}
+
+.include-option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.include-option{
+    display: flex;
+    gap: 10px;
+}
+
+.strength {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 10px;
+}
+
+.strength-texts{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.strength-level-group{
+    display: flex;
+    gap: 4px;
+}
+
+.strength-level {
+    width: 10px;
+    height: 20px;
+    border: solid 1px white;
+}
+
+.btn-generate{
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+    background-color: #7fff00;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn-generate:hover{
+    background-color: transparent;
+    border: 2px solid #7fff00;
+    color: #7fff00;
+}
+
+.btn-generate:active{
+    scale: 0.98;
+}
+
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.green {
+    background-color: #7fff00;
+}
+
+.transparent {
+    background-color: transparent;
+}
+
+@media (max-width: 430px) {
+    main {
+        width: 95vw;
+        height: 120%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
